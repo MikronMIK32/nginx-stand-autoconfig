@@ -1,0 +1,23 @@
+version: '3'
+services:
+  nginx-stand-autoconfig:
+    image: nginx-stand-autoconfig
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      PORT: 3000
+      HOST_SUFFIX: dev.mik32.ru
+    volumes:
+      - /var/www/devops/nginx/conf.d:/etc/nginx/conf.d
+      - /var/run/docker.sock:/var/run/docker.sock
+    hostname: "nginx-stand-autoconfig.mik32.127.0.0.1.nip.io"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - dev
+networks:
+  dev:
+    external: true
+    name: mik32
