@@ -1,10 +1,5 @@
 FROM node:16.3.0-alpine as installer
 
-RUN apk add npm git openjdk8-jre-base bash htop vim mc
-
-RUN addgroup -g $GROUP_ID developer
-RUN adduser -u $USER_ID -S -D -H -G developer developer
-
 WORKDIR /app
 COPY . .
 
