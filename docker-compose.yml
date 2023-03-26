@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     restart: always
     environment:
-      PORT: 800
+      PORT: 80
       HOST_SUFFIX: dev.mik32.ru
       VIRTUAL_HOST: nginx-stand-autoconfig.dev.mik32.ru
     volumes:
