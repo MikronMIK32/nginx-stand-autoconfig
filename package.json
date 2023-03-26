@@ -1,7 +1,7 @@
 {
   "name": "nginx-stand-autoconfig",
   "version": "1.0.0",
-  "main": "main.js",
+  "main": "dist/main.js",
   "repository": "https://github.com/MikronMIK32/nginx-stand-autoconfig.git",
   "author": "Ilya Yurchenko <ilyha19@live.ru>",
   "license": "MIT",
@@ -14,7 +14,7 @@
     "copyfiles": "2.4.1"
   },
   "scripts": {
-    "start": "node main.js",
+    "start": "node dist/main.js",
     "build": "mkdirp dist && copyfiles main.js dist"
   }
 }
