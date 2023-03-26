@@ -74,7 +74,7 @@ async function findImagesByName(name) {
 // // Inputs
 // const appName = "configurator";
 // const branch = "test";
-async function process({ appName, branch }) {
+async function processBranch({ appName, branch }) {
   const template = await Template.loadFromFile("./template.conf");
 
   if (branch === "master" || branch === "main") {
@@ -133,7 +133,7 @@ const server = http.createServer((req, res) => {
       const bodyObj = JSON.parse(body);
 
       if (req.url === "/deploy") {
-        process({
+        processBranch({
           appName: bodyObj.appName,
           branch: bodyObj.branch,
         })
