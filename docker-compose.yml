@@ -7,8 +7,9 @@ services:
       dockerfile: Dockerfile
     restart: always
     environment:
-      PORT: 3000
+      PORT: 800
       HOST_SUFFIX: dev.mik32.ru
+      VIRTUAL_HOST: nginx-stand-autoconfig.dev.mik32.ru
     volumes:
       - /var/www/devops/nginx/conf.d:/etc/nginx/conf.d
       - /var/run/docker.sock:/var/run/docker.sock
