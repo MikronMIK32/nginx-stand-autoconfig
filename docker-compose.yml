@@ -19,6 +19,8 @@ services:
       - "host.docker.internal:host-gateway"
     networks:
       - dev
+    ports:
+      - 3030:80/tcp
 networks:
   dev:
     external: true
